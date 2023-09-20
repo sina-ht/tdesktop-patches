@@ -146,6 +146,18 @@ index 2eefa13..0109a99 100644
  glibmm_requires = [
    'sigc++-3.0', sigcxx_req,
    'glib-2.0', glib_req,
+diff --git a/subprojects/glib.wrap b/subprojects/glib.wrap
+index bcac878..8c52743 100644
+--- a/subprojects/glib.wrap
++++ b/subprojects/glib.wrap
+@@ -1,6 +1,6 @@
+ [wrap-git]
+ directory=glib
+-url=https://gitlab.gnome.org/GNOME/glib.git
++url=https://github.com/GNOME/glib.git
+ revision=main
+ depth=1
+ 
 diff --git a/subprojects/sigc++-3.0.wrap b/subprojects/sigc++-3.0.wrap
 index 8d8c543..5eabe91 100644
 --- a/subprojects/sigc++-3.0.wrap
