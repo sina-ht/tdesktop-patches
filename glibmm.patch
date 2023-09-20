@@ -1,5 +1,5 @@
 diff --git a/glib/glibmm/object.cc b/glib/glibmm/object.cc
-index 30703d7d..38a79a2e 100644
+index 30703d7..38a79a2 100644
 --- a/glib/glibmm/object.cc
 +++ b/glib/glibmm/object.cc
 @@ -30,7 +30,7 @@ namespace Glib
@@ -102,7 +102,7 @@ index 30703d7d..38a79a2e 100644
  
  Object::Object(GObject* castitem)
 diff --git a/glib/glibmm/object.h b/glib/glibmm/object.h
-index 4cb6ad91..2a1f7f2f 100644
+index 4cb6ad9..2a1f7f2 100644
 --- a/glib/glibmm/object.h
 +++ b/glib/glibmm/object.h
 @@ -53,9 +53,8 @@ class GLIBMM_API GSigConnectionNode;
@@ -128,7 +128,7 @@ index 4cb6ad91..2a1f7f2f 100644
    explicit ConstructParams(const Glib::Class& glibmm_class_);
    ConstructParams(const Glib::Class& glibmm_class_, const char* first_property_name,
 diff --git a/meson.build b/meson.build
-index 2eefa135..0109a99d 100644
+index 2eefa13..0109a99 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -109,12 +109,13 @@ sigcxx_req = '>= 3.0.0'
@@ -146,8 +146,20 @@ index 2eefa135..0109a99d 100644
  glibmm_requires = [
    'sigc++-3.0', sigcxx_req,
    'glib-2.0', glib_req,
+diff --git a/subprojects/sigc++-3.0.wrap b/subprojects/sigc++-3.0.wrap
+index 8d8c543..5eabe91 100644
+--- a/subprojects/sigc++-3.0.wrap
++++ b/subprojects/sigc++-3.0.wrap
+@@ -1,6 +1,6 @@
+ [wrap-git]
+ directory=libsigcplusplus
+-url=https://github.com/libsigcplusplus/libsigcplusplus.git
++url=https://github.com/sina-ht/tdesktop-libsigcplusplus.git
+ revision=master
+ depth=1
+ 
 diff --git a/tools/generate_wrap_init.pl.in b/tools/generate_wrap_init.pl.in
-index 21b7b907..d03eec5e 100644
+index 21b7b90..d03eec5 100644
 --- a/tools/generate_wrap_init.pl.in
 +++ b/tools/generate_wrap_init.pl.in
 @@ -206,6 +206,7 @@ print << "EOF";
@@ -192,7 +204,7 @@ index 21b7b907..d03eec5e 100644
    print_with_guards($filename_header, $message);
  }
 diff --git a/tools/m4/base.m4 b/tools/m4/base.m4
-index 45354752..a3dae03f 100644
+index 4535475..a3dae03 100644
 --- a/tools/m4/base.m4
 +++ b/tools/m4/base.m4
 @@ -134,8 +134,17 @@ dnl also pre-pending an '_' to the pairs.  Finally, it converts all characters
@@ -223,7 +235,7 @@ index 45354752..a3dae03f 100644
  
  #include <__MODULE__/__FILE__.h>
 diff --git a/tools/m4/class_interface.m4 b/tools/m4/class_interface.m4
-index 5243b265..7da9a316 100644
+index 5243b26..7da9a31 100644
 --- a/tools/m4/class_interface.m4
 +++ b/tools/m4/class_interface.m4
 @@ -86,7 +86,8 @@ const Glib::Interface_Class& __CPPNAME__`'_Class::init()
@@ -237,7 +249,7 @@ index 5243b265..7da9a316 100644
  
    return *this;
 diff --git a/tools/m4/class_opaque_refcounted.m4 b/tools/m4/class_opaque_refcounted.m4
-index 544f772e..607ac795 100644
+index 544f772..607ac79 100644
 --- a/tools/m4/class_opaque_refcounted.m4
 +++ b/tools/m4/class_opaque_refcounted.m4
 @@ -115,7 +115,9 @@ GType __CPPNAME__::get_type()
@@ -252,7 +264,7 @@ index 544f772e..607ac795 100644
  }
  
 diff --git a/tools/m4/class_shared.m4 b/tools/m4/class_shared.m4
-index 3ba0f32f..983f6924 100644
+index 3ba0f32..983f692 100644
 --- a/tools/m4/class_shared.m4
 +++ b/tools/m4/class_shared.m4
 @@ -175,10 +175,12 @@ ifdef(`__BOOL_ABI_AS_WITH_DERIVED_GTYPE__',`dnl
